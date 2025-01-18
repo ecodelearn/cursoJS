@@ -1,125 +1,133 @@
-# Tipos Primitivos em JavaScript
+# Tipos de Dados (Data Types) em JavaScript
 
-## O que são Tipos Primitivos?
-- Em JavaScript, tipos primitivos são os tipos de dados básicos que não são objetos e representam valores imutáveis.
-- Eles formam a base para a manipulação de dados na linguagem.
+## Introdução
+- Em JavaScript, os tipos de dados são categorizados em dois grupos principais: **primitivos** e **não primitivos (objetos)**.
+- A compreensão dos tipos de dados é fundamental para manipular informações de forma eficiente.
 
 ---
 
-## Principais Tipos Primitivos
+## Tipos de Dados Primitivos
 
 ### **1. Number**
 - Representa números inteiros e de ponto flutuante.
-- Exemplos de valores:
+- Exemplos:
   ```javascript
-  let inteiro = 5;      // Número inteiro
-  let negativo = -12;   // Número negativo
-  let decimal = 3.14;   // Número de ponto flutuante
+  let inteiro = 10;         // Inteiro
+  let decimal = 3.14;       // Ponto flutuante
+  let negativo = -42;       // Número negativo
+  console.log(typeof inteiro); // "number"
   ```
-- Principais características:
-  - Suporta operações aritméticas como soma, subtração, multiplicação e divisão.
-  - Valores especiais: `Infinity`, `-Infinity` e `NaN` (Not-a-Number).
+
+#### **Infinity** e **NaN**
+- **Infinity:** Representa infinito matemático.
+  ```javascript
+  console.log(1 / 0);         // Infinity
+  console.log(typeof Infinity); // "number"
+  ```
+- **NaN (Not-a-Number):** Representa um valor que não é um número válido.
+  ```javascript
+  console.log("texto" * 2);  // NaN
+  console.log(typeof NaN);    // "number"
+  ```
 
 ---
 
 ### **2. String**
-- Representa sequências de caracteres (texto).
-- Pode ser delimitada por:
-  - Aspas duplas (`"`):
-    ```javascript
-    let nome = "Google";
-    ```
-  - Aspas simples (`'`):
-    ```javascript
-    let linguagem = 'JavaScript';
-    ```
-  - Template literals (crase `` ` ``):
-    ```javascript
-    let saudacao = `Olá, Maria!`;
-    ```
-- Principais características:
-  - Métodos comuns: `length`, `toUpperCase()`, `toLowerCase()`, `split()`, etc.
-  - Suporta interpolação com template literals:
-    ```javascript
-    let idade = 25;
-    console.log(`Tenho ${idade} anos.`);
-    ```
+- Representa texto e é delimitada por aspas simples (`'`), duplas (`"`) ou crase (`` ` ``).
+- Exemplos:
+  ```javascript
+  let texto = "Olá";
+  let linguagem = 'JavaScript';
+  let saudacao = `Bem-vindo!`;
+  console.log(typeof texto); // "string"
+  ```
 
 ---
 
 ### **3. Boolean**
-- Representa valores lógicos: `true` (verdadeiro) ou `false` (falso).
-- Usado em condições e controle de fluxo.
+- Representa valores lógicos: `true` ou `false`.
 - Exemplos:
   ```javascript
-  let maiorDeIdade = true;
-  let temPermissao = false;
+  let ativo = true;
+  let inativo = false;
+  console.log(typeof ativo); // "boolean"
   ```
-- Principais características:
-  - Utilizado em operações lógicas (e.g., `&&`, `||`, `!`).
-  - Comumente usado em comparações:
-    ```javascript
-    let idade = 18;
-    console.log(idade >= 18); // true
-    ```
 
 ---
 
-### **Outros Tipos Primitivos**
-
-#### **4. Undefined**
-- Representa a ausência de valor atribuído.
-- Exemplo:
-  ```javascript
-  let indefinido;
-  console.log(indefinido); // undefined
-  ```
-
-#### **5. Null**
+### **4. Null**
 - Representa a ausência intencional de qualquer valor.
+- É tratado como um objeto (peculiaridade do JavaScript).
 - Exemplo:
   ```javascript
   let vazio = null;
-  ```
-
-#### **6. Symbol (ES6)**
-- Representa um identificador único e imutável.
-- Exemplo:
-  ```javascript
-  let simbolo = Symbol("id");
-  ```
-
-#### **7. BigInt (ES11)**
-- Representa números inteiros maiores que `Number.MAX_SAFE_INTEGER`.
-- Exemplo:
-  ```javascript
-  let big = 123456789012345678901234567890n;
+  console.log(typeof vazio); // "object"
   ```
 
 ---
 
-## Exemplo Prático
-```javascript
-// Exemplos de tipos primitivos
-let numero = 42;          // Number
-let texto = "Olá";        // String
-let verdade = true;       // Boolean
-let indefinido;           // Undefined
-let nulo = null;          // Null
-let simbolo = Symbol();   // Symbol
-let numeroGrande = 9007199254740991n; // BigInt
+### **5. Undefined**
+- Representa uma variável que foi declarada, mas não inicializada.
+- Exemplo:
+  ```javascript
+  let indefinido;
+  console.log(typeof indefinido); // "undefined"
+  ```
 
-console.log(typeof numero); // "number"
-console.log(typeof texto);  // "string"
-console.log(typeof verdade); // "boolean"
-console.log(typeof indefinido); // "undefined"
-console.log(typeof nulo);      // "object" (peculiaridade do JavaScript)
-console.log(typeof simbolo);   // "symbol"
-console.log(typeof numeroGrande); // "bigint"
-```
+---
+
+## Tipos Não Primitivos (Objetos)
+
+### **6. Object**
+- Representa coleções de pares chave-valor.
+- Exemplos:
+  ```javascript
+  let pessoa = { nome: "Ana", idade: 25 };
+  console.log(typeof pessoa); // "object"
+  ```
+
+---
+
+### **7. Array**
+- Uma coleção ordenada de valores.
+- Embora tecnicamente seja um objeto, os arrays têm características específicas.
+- Exemplo:
+  ```javascript
+  let numeros = [1, 2, 3, 4];
+  console.log(typeof numeros); // "object"
+  ```
+
+---
+
+### **8. Function**
+- Representa blocos de código reutilizáveis.
+- Exemplo:
+  ```javascript
+  function soma(a, b) {
+    return a + b;
+  }
+  console.log(typeof soma); // "function"
+  ```
+
+---
+
+## Resumo dos Tipos e `typeof`
+
+| Tipo          | Exemplo                 | `typeof`      |
+|---------------|-------------------------|---------------|
+| Number        | `let x = 42;`          | `"number"`    |
+| Infinity      | `let x = 1 / 0;`       | `"number"`    |
+| NaN           | `let x = "a" * 3;`    | `"number"`    |
+| String        | `let x = "texto";`    | `"string"`    |
+| Boolean       | `let x = true;`        | `"boolean"`   |
+| Null          | `let x = null;`        | `"object"`    |
+| Undefined     | `let x;`               | `"undefined"` |
+| Object        | `let x = {a: 1};`      | `"object"`    |
+| Array         | `let x = [1, 2, 3];`   | `"object"`    |
+| Function      | `let x = function() {};` | `"function"` |
 
 ---
 
 ## Conclusão
-- Os tipos primitivos são fundamentais para a manipulação de dados em JavaScript.
-- Compreender suas características ajuda no desenvolvimento de código mais eficiente e livre de erros.
+- Os tipos de dados em JavaScript são essenciais para a manipulação de informações.
+- Compreender o uso de `typeof` ajuda a identificar o tipo de qualquer valor, garantindo maior precisão no desenvolvimento de aplicações.
