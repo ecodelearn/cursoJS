@@ -6,7 +6,7 @@
     <title>Meu Primeiro Programa</title>
     <style>
         body {
-            background-color: rgb(100, 100, 170);
+            background-color: rgb(100, 100, 170); /* comentario em CSS */
             color: white;
             font: normal 20pt Arial;
             text-align: center;
@@ -18,11 +18,12 @@
     </style>
 </head>
 <body>
-    <h1>Olá Mundo!</h1>
+    <h1>Olá Mundo!</h1> <!-- Comentário em HTML -->
     <p>Já me livrei da maldição</p>
     <script>
-        prompt('Qual é o seu nome?')
-        console.log("Olá Mundo!")
+        var nome = prompt('Qual é o seu nome?') // Pergunta ao usuário o nome
+        alert('Seus nome é: ' + nome + '!') // Mensagem de alerta exibe o nome do usuário
+        console.log('Olá ' + nome + '!') // Mensagem de console exibe o nome do usuário
     </script>
 </body>
 </html>
