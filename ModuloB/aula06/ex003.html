@@ -23,8 +23,18 @@
     <script>
         var n1 = window.prompt('Digite um número:') // Window prompt retorna uma string
         var n2 = window.prompt('Digite outro número:')
+        /*
+        Maneiras de converter para número uma string:
+        - Number.parseInt(n1)
+        - Number.parseFloat(n1)
+        - Number(n1) // Reconhece números inteiros e decimais
+
+        */
         var s = Number(n1) + Number(n2) // Converte o valor para número
-        alert('A some dos números é: ' + s) // Mensagem de alerta exibe o resultado
+        alert('A soma dos números é: ' + s) // Mensagem de alerta exibe o resultado
+        alert('A soma é uma string, usando String(s): ' + String(s)) // Converte o resultado para string
+        alert('A soma é uma string, usando s.toString(): ' + s.toString()) // Converte o resultado para string de outra forma.
+        
     </script>
 </body>
 </html>
