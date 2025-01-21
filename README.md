@@ -39,7 +39,7 @@ Eu estou acompanhando o curso e aplicando os conceitos aprendidos em pequenos pr
 
 - [x] Introdução ao JavaScript
 - [x] Estruturas de Controle
-- [ ] Manipulação de DOM
+- [x] Manipulação de DOM
 - [ ] Projetos Avançados
 
 ## Como Acessar o Curso 🔗
