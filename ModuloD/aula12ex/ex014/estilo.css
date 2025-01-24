@@ -13,7 +13,7 @@ header {
 }
 
 section {
-    max-width: 800px;
+    max-width: 400px;
     margin: 20px auto;
     background-color: white;
     border-radius: 10%;
@@ -24,8 +24,10 @@ section {
 div {
     margin-bottom: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 0px solid #ccc;
     border-radius: 10px;
+    text-align: center;
+    padding: 10px;
 }
 
 footer {
